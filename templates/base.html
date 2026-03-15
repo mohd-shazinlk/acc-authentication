@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}devWebApp{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% block style %}{% endblock %}
+</head>
+<body>
+    <div class="mobile-container">
+        <header>
+            <div class="logo">LOGO</div>
+            <h1 class="app-name">App Name</h1>
+        </header>
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+        <footer>
+            <p>copyright 2025 devWebApp - <a href="#">Terms & Conditions</a></p>
+        </footer>
+    </div>
+    {% block script %}{% endblock %}
+</body>
+</html> 

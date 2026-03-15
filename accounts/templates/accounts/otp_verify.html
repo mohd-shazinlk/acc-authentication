@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'accounts/css/accounts.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="auth-container">
+    <div class="form-container">
+        <div class="info-header">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio.</p>
+        </div>
+        
+        <h2 class="form-title">Enter 6 Digits OTP</h2>
+        <p class="otp-info">OTP valid for 1 minute</p>
+
+        {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                    <div class="message {{ message.tags }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <form method="post">
+            {% csrf_token %}
+            {{ form.otp }}
+            <button type="submit" class="auth-button">Verify</button>
+        </form>
+
+        <div class="back-button-container">
+            <a href="{% url 'forgot_password' %}" class="back-button">BACK</a>
+        </div>
+    </div>
+</div>
+{% endblock %} 

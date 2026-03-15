@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="page-container">
+    <h2>Profile Page</h2>
+    <p>Hello, <strong>{{ user.username }}</strong>!</p>
+    <p>Your registered email is: <strong>{{ user.email }}</strong></p>
+    <a href="{% url 'home' %}" class="page-link">Back to Home</a>
+    <a href="{% url 'logout' %}" class="page-link logout">Logout</a>
+</div>
+{% endblock %} 
